@@ -19,7 +19,7 @@ The OS and SW versions used are the following ones:
 > This message occurred once compiling *Fast DDS-Gen* both installing *gradle* and
 > launching the executable script:
 > ```
-> ./gradlew assemble
+> $ ./gradlew assemble
 > ```
 
 ## HelloWorld application
@@ -51,25 +51,21 @@ With *fastddsgen* it is possible to see that more files than the ones denoted in
 > </br>
 > Once we run the command:
 > ```
-> cmake ...
+> $ cmake ...
 > ```
 > there are errors due to the missing *fastcdr*, *fastrtps* e *foonathan_memory*
 > libraries, as anticipated in *Warning 2*. It is possible to run these three commands instead:
 > ```
-> cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/lib/cmake/fastcdr/ ..
->
-> cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/share/fastrtps/cmake/ ..
->
-> cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/foonathan_memory_vendor/build/foo_mem_ext_prj_install/lib/foonathan_memory/cmake/ ..
+> $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/lib/cmake/fastcdr/ ..
+> $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/share/fastrtps/cmake/ ..
+> $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/foonathan_memory_vendor/build/foo_mem_ext_prj_install/lib/foonathan_memory/cmake/ ..
 > ```
 
 The libraries paths can be found from *$HOME* with:
 ```
-find . | grep fastcdr-config.cmake
-
-find . | grep fastrtps-config.cmake
-
-find . | grep foonathan_memory-config.cmake
+$ find . | grep fastcdr-config.cmake
+$ find . | grep fastrtps-config.cmake
+$ find . | grep foonathan_memory-config.cmake
 ```
 Now it is possible to follow the last steps to run both the Publisher and Subscriber applications.
 ## RSWE library tasks
