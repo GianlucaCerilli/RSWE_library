@@ -1,0 +1,5 @@
+struct RSWECustomMsg
+{
+    unsigned long index;
+    string message;
+};
