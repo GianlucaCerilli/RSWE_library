@@ -84,7 +84,7 @@ Here a rundown of the main activities that have been carried on approximately in
 | Activity                                 | ~ Time spent (hr) |
 | ---------------------------------------- | ----------------- |
 | Libraries installation & problems fixing | 2.5               |
-| Documentation analysis                   | 1                 |
+| Official documentation analysis          | 1                 |
 | Making the example application work      | 0.75              |
 | Creation of the custom RSWE application  | 0.5               |
 | Writing of documentation                 | 1                 |
