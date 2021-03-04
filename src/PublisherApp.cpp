@@ -1,5 +1,5 @@
 #include <memory>
-#include "RSWEPublisher.hpp"
+#include "../include/RSWEPublisher.hpp"
 
 using namespace RSWE;
 

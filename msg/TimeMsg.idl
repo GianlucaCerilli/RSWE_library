@@ -1,0 +1,5 @@
+struct TimeMsg
+{
+    string message;
+    unsigned long index;
+};

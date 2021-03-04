@@ -1,4 +1,4 @@
-#include "RSWEPublisher.hpp"
+#include "../include/RSWEPublisher.hpp"
 
 namespace RSWE
 {
@@ -33,7 +33,7 @@ namespace RSWE
     }
 
     RSWEPublisher::RSWEPublisher()
-        : participant_(nullptr), publisher_(nullptr), topic_(nullptr), writer_(nullptr), type_(new RSWECustomMsgPubSubType())
+        : participant_(nullptr), publisher_(nullptr), topic_(nullptr), writer_(nullptr), type_(new TimeMsgPubSubType())
     {
     }
 
@@ -58,7 +58,7 @@ namespace RSWE
     bool RSWEPublisher::init()
     {
         hello_.index(0);
-        hello_.message("RSWECustomMsg");
+        hello_.message("TimeMsg");
 
         DomainParticipantQos participantQos;
         participantQos.name("Participant_publisher");
@@ -73,7 +73,7 @@ namespace RSWE
         type_.register_type(participant_);
 
         // Create the publications Topic
-        topic_ = participant_->create_topic("RSWECustomMsgTopic", "RSWECustomMsg", TOPIC_QOS_DEFAULT);
+        topic_ = participant_->create_topic("TimeMsgTopic", "TimeMsg", TOPIC_QOS_DEFAULT);
 
         if (topic_ == nullptr)
         {

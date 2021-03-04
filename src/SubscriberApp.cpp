@@ -1,5 +1,5 @@
 #include <memory>
-#include "RSWESubscriber.hpp"
+#include "../include/RSWESubscriber.hpp"
 
 using namespace RSWE;
 
@@ -11,7 +11,7 @@ int main(
 
     int samples = 10;
 
-    std::unique_ptr<RSWESubscriber> mysub ( new RSWESubscriber()) ;
+    std::unique_ptr<RSWESubscriber> mysub(new RSWESubscriber());
 
     if (mysub->init())
     {

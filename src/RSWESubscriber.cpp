@@ -1,4 +1,4 @@
-#include "RSWESubscriber.hpp"
+#include "../include/RSWESubscriber.hpp"
 
 namespace RSWE
 {
@@ -46,7 +46,7 @@ namespace RSWE
     }
 
     RSWESubscriber::RSWESubscriber()
-        : participant_(nullptr), subscriber_(nullptr), topic_(nullptr), reader_(nullptr), type_(new RSWECustomMsgPubSubType())
+        : participant_(nullptr), subscriber_(nullptr), topic_(nullptr), reader_(nullptr), type_(new TimeMsgPubSubType())
     {
     }
 
@@ -82,7 +82,7 @@ namespace RSWE
         type_.register_type(participant_);
 
         // Create the subscriptions Topic
-        topic_ = participant_->create_topic("RSWECustomMsgTopic", "RSWECustomMsg", TOPIC_QOS_DEFAULT);
+        topic_ = participant_->create_topic("TimeMsgTopic", "TimeMsg", TOPIC_QOS_DEFAULT);
 
         if (topic_ == nullptr)
         {

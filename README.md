@@ -23,16 +23,9 @@ The OS and SW versions used are the following ones:
 > ```
 
 ## HelloWorld application
-A simple publisher/subscriber application can be written by following the guide on [Writing a simple publisher and subscriber application](https://fast-rtps.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html#prerequisites).
+A simple publisher/subscriber application can be written by following the guide on [Writing a simple publisher and subscriber application](https://fast-rtps.docs.eprosima.com/en/latest/fastdds/getting_started/simple_app/simple_app.html#prerequisites). The *1.3.4.2.* paragraph has been skipped, since *Colcon* has not been installed.
 
 > **Warning 2**
-> </br>
-> The libraries denoted in the *1.3.4.1.* paragraph were not present in the path
-> indicated. That is why they have been manually linked further on.
-
-The *1.3.4.2.* paragraph has been skipped, since *Colcon* has not been installed.
-
-> **Warning 3**
 > </br>
 > It was not possible to run the command of *1.3.6.* section:
 > ```
@@ -45,16 +38,16 @@ The *1.3.4.2.* paragraph has been skipped, since *Colcon* has not been installed
 > ```
 > following the other guide on [Building a publish/subscribe application](https://fast-rtps.docs.eprosima.com/en/latest/fastddsgen/pubsub_app/pubsub_app.html#fastddsgen-pubsub-app).
 
-With *fastddsgen* it is possible to see that more files than the ones denoted in the project tree structure at *1.3.3* section are created. The ones in excess can be deleted (otherwise there will be multiple definitions of main).
+There could be the possibility that *fastddsgen* add more files than the ones needed and denoted in the project tree structure at *1.3.3* section. In that case, you can delete the ones in excess (otherwise there will be multiple definitions of main).
 
-> **Warning 4**
+> **Warning 3**
 > </br>
-> Once we run the command:
+> Once we run the command from the *build* folder:
 > ```
 > $ cmake ...
 > ```
 > there are errors due to the missing *fastcdr*, *fastrtps* e *foonathan_memory*
-> libraries, as anticipated in *Warning 2*. It is possible to run this command instead:
+> libraries. It is possible to run this command instead:
 > ```
 > $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/ ..
 > ```
@@ -66,6 +59,27 @@ $ find . | grep fastrtps-config.cmake
 $ find . | grep foonathan_memory-config.cmake
 ```
 Now it is possible to follow the last steps to run both the Publisher and Subscriber applications.
+
+## How to run RSWE library
+- Clone the **RSWE_library** repository with:
+    ```
+    $ git clone https://github.com/GianlucaCerilli/RSWE_library.git
+    ```
+- Build the project by running the following commands in sequence:
+    ```
+    $ cd RSWE_library/build
+    $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/ ..
+    $ cmake .. && make clean && make
+    ```
+- It is possible to run the publisher and subscriber by running the following commands in two different terminals:
+    ```
+    $ ./publisherApp
+    $ ./subscriberApp
+    ```
+- Otherwise, it is possible to run different threads with:
+    ```
+    $ ./threadsApp
+    ```
 ## RSWE library tasks
 The main tasks required for the design of the **RSWE library** are:
 - [x] Create custom messages

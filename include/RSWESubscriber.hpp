@@ -13,66 +13,66 @@
 // limitations under the License.
 
 /**
- * @file RSWEPublisher.hpp
+ * @file RSWESubscriber.hpp
  *
  */
 
-#include "msg/RSWECustomMsgPubSubTypes.h"
-#include "msg/MsgTimePubSubTypes.h"
+#include "../msg/TimeMsgPubSubTypes.h"
 
 #include <fastdds/dds/domain/DomainParticipantFactory.hpp>
 #include <fastdds/dds/domain/DomainParticipant.hpp>
 #include <fastdds/dds/topic/TypeSupport.hpp>
-#include <fastdds/dds/publisher/Publisher.hpp>
-#include <fastdds/dds/publisher/DataWriter.hpp>
-#include <fastdds/dds/publisher/DataWriterListener.hpp>
+#include <fastdds/dds/subscriber/Subscriber.hpp>
+#include <fastdds/dds/subscriber/DataReader.hpp>
+#include <fastdds/dds/subscriber/DataReaderListener.hpp>
+#include <fastdds/dds/subscriber/qos/DataReaderQos.hpp>
+#include <fastdds/dds/subscriber/SampleInfo.hpp>
 
 namespace RSWE
 {
     using namespace eprosima::fastdds::dds;
 
-    class RSWEPublisher
+    class RSWESubscriber
     {
-    private:
-        RSWECustomMsg hello_;
 
+    private:
         DomainParticipant *participant_;
 
-        Publisher *publisher_;
+        Subscriber *subscriber_;
+
+        DataReader *reader_;
 
         Topic *topic_;
 
-        DataWriter *writer_;
-
         TypeSupport type_;
-
-        class PubListener : public DataWriterListener
+        class SubListener : public DataReaderListener
         {
         public:
-            PubListener();
+            SubListener();
 
-            ~PubListener() override;
+            ~SubListener() override;
 
-            void on_publication_matched(
-                DataWriter *,
-                const PublicationMatchedStatus &info) override;
+            void on_subscription_matched(
+                DataReader *,
+                const SubscriptionMatchedStatus &info) override;
 
-            std::atomic_int matched_;
+            void on_data_available(
+                DataReader *reader) override;
+
+            TimeMsg hello_;
+
+            std::atomic_int samples_;
 
         } listener_;
 
     public:
-        RSWEPublisher();
+        RSWESubscriber();
 
-        virtual ~RSWEPublisher();
+        virtual ~RSWESubscriber();
 
-        //!Initialize the publisher
         bool init();
 
-        //!Send a publication
-        bool publish();
-
-        //!Run the Publisher
-        void run(uint32_t samples);
+        void run(
+            uint32_t samples);
     };
 }
