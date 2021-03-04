@@ -41,7 +41,7 @@ The *1.3.4.2.* paragraph has been skipped, since *Colcon* has not been installed
 > since *fastrtpsgen* does not exist at the following path, and seems to be
 > deprecated. The following command has been run instead:
 > ```
-> <path-to-Fast-DDS-Gen>/scripts/fastddsgen -example CMake HelloWorld.idl
+> <path-to-Fast-DDS-Gen>/scripts/fastddsgen HelloWorld.idl
 > ```
 > following the other guide on [Building a publish/subscribe application](https://fast-rtps.docs.eprosima.com/en/latest/fastddsgen/pubsub_app/pubsub_app.html#fastddsgen-pubsub-app).
 

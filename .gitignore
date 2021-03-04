@@ -34,3 +34,6 @@
 # Build directory and files
 !build/.gitkeep
 build/
+
+#Visual Studio Code
+.vscode

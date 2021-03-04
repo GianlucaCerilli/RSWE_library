@@ -1,6 +1,0 @@
-/home/ictadmin/RSWE_library/build/CMakeFiles/rebuild_cache.dir
-/home/ictadmin/RSWE_library/build/CMakeFiles/edit_cache.dir
-/home/ictadmin/RSWE_library/build/CMakeFiles/subscriberApp.dir
-/home/ictadmin/RSWE_library/build/CMakeFiles/threadsApp.dir
-/home/ictadmin/RSWE_library/build/CMakeFiles/RSWE_lib.dir
-/home/ictadmin/RSWE_library/build/CMakeFiles/publisherApp.dir
