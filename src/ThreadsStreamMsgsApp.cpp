@@ -1,6 +1,9 @@
 /**
  * @file ThreadsApp.cpp
  *
+ * Publisher thread streams messages.
+ * Subscriber thread keeps listening.
+ *
  */
 
 #include "../include/RSWEPublisher.hpp"
@@ -10,8 +13,6 @@ using namespace RSWE;
 
 int main()
 {
-    /* Publisher thread streams messages.
-    ** Subscriber thread keeps listening. */
     uint32_t samples{10};
 
     std::vector<std::unique_ptr<std::thread>> threads;

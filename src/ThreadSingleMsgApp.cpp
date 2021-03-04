@@ -1,6 +1,9 @@
 /**
  * @file ThreadsApp.cpp
  *
+ * Subscriber wants to read a single message from the topic.
+ * Publisher thread is activated.
+ *
  */
 
 #include "../include/RSWEPublisher.hpp"
@@ -10,9 +13,6 @@ using namespace RSWE;
 
 int main()
 {
-    /* Subscriber wants to read a single message from the topic.
-    ** Publisher thread is activated. */
-
     std::unique_ptr<RSWESubscriber> sub(new RSWESubscriber());
 
     if (sub->init())
