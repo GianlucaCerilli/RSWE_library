@@ -1,3 +1,8 @@
+/**
+ * @file SubscriberApp.cpp
+ *
+ */
+
 #include <memory>
 #include "../include/RSWESubscriber.hpp"
 

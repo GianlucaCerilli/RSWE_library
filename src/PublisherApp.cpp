@@ -1,3 +1,8 @@
+/**
+ * @file PublisherApp.cpp
+ *
+ */
+
 #include <memory>
 #include "../include/RSWEPublisher.hpp"
 

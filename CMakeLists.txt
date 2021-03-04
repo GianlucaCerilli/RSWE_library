@@ -28,12 +28,12 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLANG OR
 endif()
 
 message(STATUS "Configuring RSWE library publisher/subscriber")
-file(GLOB DDS_ROBOTICSSWPROJECT_SOURCES_CXX "msg/*.cxx")
+file(GLOB RSWE_LIBRARY_MSG_SOURCES_CXX "msg/*.cxx")
 
 add_library(RSWE_lib
   src/RSWESubscriber.cpp
   src/RSWEPublisher.cpp
-  ${DDS_ROBOTICSSWPROJECT_SOURCES_CXX})
+  ${RSWE_LIBRARY_MSG_SOURCES_CXX})
 
   target_link_libraries(RSWE_lib fastrtps fastcdr)
 
