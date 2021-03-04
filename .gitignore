@@ -32,8 +32,8 @@
 *.app
 
 # Build directory and files
-!build/.gitkeep
 build/*
+!build/.gitkeep
 
 #Visual Studio Code
 .vscode/
