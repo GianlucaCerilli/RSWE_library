@@ -33,7 +33,7 @@
 
 # Build directory and files
 !build/.gitkeep
-build/
+build/*
 
 #Visual Studio Code
-.vscode
+.vscode/
