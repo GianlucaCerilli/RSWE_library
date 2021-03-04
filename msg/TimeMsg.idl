@@ -2,4 +2,7 @@ struct TimeMsg
 {
     string message;
     unsigned long index;
+    unsigned long hour;
+    unsigned long minute;
+    unsigned long second;
 };

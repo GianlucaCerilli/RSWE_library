@@ -151,6 +151,63 @@ public:
      */
     eProsima_user_DllExport uint32_t& index();
 
+    /*!
+     * @brief This function sets a value in member hour
+     * @param _hour New value for member hour
+     */
+    eProsima_user_DllExport void hour(
+            uint32_t _hour);
+
+    /*!
+     * @brief This function returns the value of member hour
+     * @return Value of member hour
+     */
+    eProsima_user_DllExport uint32_t hour() const;
+
+    /*!
+     * @brief This function returns a reference to member hour
+     * @return Reference to member hour
+     */
+    eProsima_user_DllExport uint32_t& hour();
+
+    /*!
+     * @brief This function sets a value in member minute
+     * @param _minute New value for member minute
+     */
+    eProsima_user_DllExport void minute(
+            uint32_t _minute);
+
+    /*!
+     * @brief This function returns the value of member minute
+     * @return Value of member minute
+     */
+    eProsima_user_DllExport uint32_t minute() const;
+
+    /*!
+     * @brief This function returns a reference to member minute
+     * @return Reference to member minute
+     */
+    eProsima_user_DllExport uint32_t& minute();
+
+    /*!
+     * @brief This function sets a value in member second
+     * @param _second New value for member second
+     */
+    eProsima_user_DllExport void second(
+            uint32_t _second);
+
+    /*!
+     * @brief This function returns the value of member second
+     * @return Value of member second
+     */
+    eProsima_user_DllExport uint32_t second() const;
+
+    /*!
+     * @brief This function returns a reference to member second
+     * @return Reference to member second
+     */
+    eProsima_user_DllExport uint32_t& second();
+
 
     /*!
      * @brief This function returns the maximum serialized size of an object
@@ -213,6 +270,9 @@ private:
 
     std::string m_message;
     uint32_t m_index;
+    uint32_t m_hour;
+    uint32_t m_minute;
+    uint32_t m_second;
 };
 
 #endif // _TIMEMSG_H_

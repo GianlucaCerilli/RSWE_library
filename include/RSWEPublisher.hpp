@@ -33,7 +33,7 @@ namespace RSWE
     class RSWEPublisher
     {
     private:
-        TimeMsg hello_;
+        TimeMsg time_;
 
         DomainParticipant *participant_;
 
@@ -73,5 +73,7 @@ namespace RSWE
 
         //!Run the Publisher
         void run(uint32_t samples);
+
+        void updateTimeMsg();
     };
 }

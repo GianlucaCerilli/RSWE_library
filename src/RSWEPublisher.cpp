@@ -76,9 +76,9 @@ namespace RSWE
     //!Initialize the publisher
     bool RSWEPublisher::init()
     {
-        hello_.index(0);
-        hello_.message("TimeMsg");
-
+        time_.message("Current time");
+        time_.index(0);
+        updateTimeMsg();
         DomainParticipantQos participantQos;
         participantQos.name("Participant_publisher");
         participant_ = DomainParticipantFactory::get_instance()->create_participant(0, participantQos);
@@ -122,8 +122,8 @@ namespace RSWE
     {
         if (listener_.matched_ > 0)
         {
-            hello_.index(hello_.index() + 1);
-            writer_->write(&hello_);
+            time_.index(time_.index() + 1);
+            writer_->write(&time_);
             return true;
         }
         return false;
@@ -134,16 +134,27 @@ namespace RSWE
         uint32_t samples)
     {
         uint32_t samples_sent = 0;
-        std::cout << "Name : " << static_cast<DomainParticipantQos>(participant_->get_qos()).name() << std::endl;
+        std::cout << "Participant: " << static_cast<DomainParticipantQos>(participant_->get_qos()).name()
+                  << " [Thread id: " << std::this_thread::get_id() << "]" << std::endl;
         while (samples_sent < samples)
         {
             if (publish())
             {
                 samples_sent++;
-                std::cout << "Message: " << hello_.message() << " with index: " << hello_.index()
-                          << " SENT" << std::endl;
+                updateTimeMsg();
+                std::cout << "Message SENT: " << time_.message() << " - " << time_.hour() << ":" << time_.minute() << ":" << time_.second() << std::endl;
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
+    }
+
+    void RSWEPublisher::updateTimeMsg()
+    {
+        time_t ttime = time(0);
+        tm *local_time = localtime(&ttime);
+
+        time_.hour(static_cast<unsigned long>(local_time->tm_hour));
+        time_.minute(static_cast<unsigned long>(local_time->tm_min));
+        time_.second(static_cast<unsigned long>(local_time->tm_sec));
     }
 }

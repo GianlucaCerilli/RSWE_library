@@ -35,12 +35,16 @@ add_library(RSWE_lib
   src/RSWEPublisher.cpp
   ${RSWE_LIBRARY_MSG_SOURCES_CXX})
 
-  target_link_libraries(RSWE_lib fastrtps fastcdr)
+target_link_libraries(RSWE_lib fastrtps fastcdr)
 
 add_executable(publisherApp src/PublisherApp.cpp)
 add_executable(subscriberApp src/SubscriberApp.cpp)
-add_executable(threadsApp src/ThreadsApp.cpp)
 
 target_link_libraries(publisherApp PUBLIC RSWE_lib)
 target_link_libraries(subscriberApp PUBLIC RSWE_lib)
-target_link_libraries(threadsApp pthread)
+
+add_executable(threadSingleMsgApp src/ThreadSingleMsgApp.cpp)
+add_executable(threadsStreamMsgsApp src/ThreadsStreamMsgsApp.cpp)
+
+target_link_libraries(threadSingleMsgApp PUBLIC RSWE_lib pthread)
+target_link_libraries(threadsStreamMsgsApp PUBLIC RSWE_lib pthread)

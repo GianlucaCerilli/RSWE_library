@@ -59,7 +59,7 @@ namespace RSWE
             void on_data_available(
                 DataReader *reader) override;
 
-            TimeMsg hello_;
+            TimeMsg time_;
 
             std::atomic_int samples_;
 

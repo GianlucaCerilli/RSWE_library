@@ -76,17 +76,31 @@ Now it is possible to follow the last steps to run both the Publisher and Subscr
     $ ./publisherApp
     $ ./subscriberApp
     ```
-- Otherwise, it is possible to run different threads with:
+- Otherwise, it is possible to run the publisher and subscriber in one single terminal, using threads. By running:
     ```
-    $ ./threadsApp
+    $ ./threadSingleMsgApp
     ```
+    we run an application in which a subscriber activates the publisher thread when it needs to receive a single message from it.
+    </br>
+    Instead, with this command:
+    ```
+    $ ./threadsStreamMsgsApp
+    ```
+    two different processes (publisher and subscriber threads) are runned together. The publisher streams a series of messages and the subscriber keeps listening.
+
+    There could be the necessity to link the dynamic library *libfastcdr.so.1* when you launch *ThreadSingleMsgApp* or *ThreadSingleMsgApp*. You can do this by running the following commands:
+    ```
+    $ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/Fast-DDS/install/lib/
+    $ export LD_LIBRARY_PATH
+    ```
+    and then run the executable again.
 ## RSWE library tasks
 The main tasks required for the design of the **RSWE library** are:
 - [x] Create custom messages
-- [] Stream messages between separate processes
-- [] Send a single message/response between separate processes
-- [] Display published messages in the terminal
-- [] Display what processes are publishing messages
+- [x] Send a single message/response between separate processes
+- [x] Stream messages between separate processes
+- [x] Display published messages in the terminal
+- [x] Display what processes are publishing messages
 - [] Stress test system
 - [] Measure rate of sent messages
 - [] Measure latency of sent messages

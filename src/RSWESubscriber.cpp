@@ -53,13 +53,12 @@ namespace RSWE
         DataReader *reader)
     {
         SampleInfo info;
-        if (reader->take_next_sample(&hello_, &info) == ReturnCode_t::RETCODE_OK)
+        if (reader->take_next_sample(&time_, &info) == ReturnCode_t::RETCODE_OK)
         {
             if (info.valid_data)
             {
                 samples_++;
-                std::cout << "Message: " << hello_.message() << " with index: " << hello_.index()
-                          << " RECEIVED." << std::endl;
+                std::cout << "Message RECEIVED: " << time_.message() << " - " << time_.hour() << ":" << time_.minute() << ":" << time_.second() << std::endl;
             }
         }
     }
@@ -130,7 +129,8 @@ namespace RSWE
     void RSWESubscriber::run(
         uint32_t samples)
     {
-        std::cout << "Name : " << static_cast<DomainParticipantQos>(participant_->get_qos()).name() << std::endl;
+        std::cout << "Participant: " << static_cast<DomainParticipantQos>(participant_->get_qos()).name()
+                  << " [Thread id: " << std::this_thread::get_id() << "]" << std::endl;
         while (listener_.samples_ < samples)
         {
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
