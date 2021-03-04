@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Build directory and files
+!build/.gitkeep
+build/

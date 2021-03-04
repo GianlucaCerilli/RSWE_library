@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ictadmin/Fast-DDS/foonathan_memory_vendor/build/foo_mem_ext_prj_install/lib/foonathan_memory/cmake")
+  set(CMAKE_INSTALL_PREFIX "/home/ictadmin/Fast-DDS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

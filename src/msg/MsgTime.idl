@@ -1,0 +1,8 @@
+struct MsgTime
+{
+    unsigned long index1;
+    unsigned long index2;
+    unsigned long index3;
+    unsigned long index4;
+    string message;
+};

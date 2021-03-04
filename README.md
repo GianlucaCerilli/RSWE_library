@@ -54,11 +54,9 @@ With *fastddsgen* it is possible to see that more files than the ones denoted in
 > $ cmake ...
 > ```
 > there are errors due to the missing *fastcdr*, *fastrtps* e *foonathan_memory*
-> libraries, as anticipated in *Warning 2*. It is possible to run these three commands instead:
+> libraries, as anticipated in *Warning 2*. It is possible to run this command instead:
 > ```
-> $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/lib/cmake/fastcdr/ ..
-> $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/share/fastrtps/cmake/ ..
-> $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/foonathan_memory_vendor/build/foo_mem_ext_prj_install/lib/foonathan_memory/cmake/ ..
+> $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/ ..
 > ```
 
 The libraries paths can be found from *$HOME* with:
@@ -70,7 +68,7 @@ $ find . | grep foonathan_memory-config.cmake
 Now it is possible to follow the last steps to run both the Publisher and Subscriber applications.
 ## RSWE library tasks
 The main tasks required for the design of the **RSWE library** are:
-- [] Create custom messages
+- [x] Create custom messages
 - [] Stream messages between separate processes
 - [] Send a single message/response between separate processes
 - [] Display published messages in the terminal
@@ -84,7 +82,7 @@ Here a rundown of the main activities that have been carried on approximately in
 | Activity                                 | ~ Time spent (hr) |
 | ---------------------------------------- | ----------------- |
 | Libraries installation & problems fixing | 2.5               |
-| Official documentation analysis          | 1                 |
+| Study of Fast-DDS documentation          | 1                 |
 | Making the example application work      | 0.75              |
-| Creation of the custom RSWE application  | 0.5               |
+| Creation of the RSWE library             | 4                 |
 | Writing of documentation                 | 1                 |

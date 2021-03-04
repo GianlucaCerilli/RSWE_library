@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/ictadmin/RSWE_library/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,144 +111,299 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named DDSRoboticsSwProjectPublisher
+# Target rules for targets named subscriberApp
 
 # Build rule for target.
-DDSRoboticsSwProjectPublisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 DDSRoboticsSwProjectPublisher
-.PHONY : DDSRoboticsSwProjectPublisher
+subscriberApp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 subscriberApp
+.PHONY : subscriberApp
 
 # fast build rule for target.
-DDSRoboticsSwProjectPublisher/fast:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build
-.PHONY : DDSRoboticsSwProjectPublisher/fast
+subscriberApp/fast:
+	$(MAKE) -f CMakeFiles/subscriberApp.dir/build.make CMakeFiles/subscriberApp.dir/build
+.PHONY : subscriberApp/fast
 
 #=============================================================================
-# Target rules for targets named DDSRoboticsSwProjectSubscriber
+# Target rules for targets named threadsApp
 
 # Build rule for target.
-DDSRoboticsSwProjectSubscriber: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 DDSRoboticsSwProjectSubscriber
-.PHONY : DDSRoboticsSwProjectSubscriber
+threadsApp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 threadsApp
+.PHONY : threadsApp
 
 # fast build rule for target.
-DDSRoboticsSwProjectSubscriber/fast:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build
-.PHONY : DDSRoboticsSwProjectSubscriber/fast
+threadsApp/fast:
+	$(MAKE) -f CMakeFiles/threadsApp.dir/build.make CMakeFiles/threadsApp.dir/build
+.PHONY : threadsApp/fast
 
-src/RSWECustomMsg.o: src/RSWECustomMsg.cxx.o
+#=============================================================================
+# Target rules for targets named RSWE_lib
 
-.PHONY : src/RSWECustomMsg.o
+# Build rule for target.
+RSWE_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RSWE_lib
+.PHONY : RSWE_lib
 
-# target to build an object file
-src/RSWECustomMsg.cxx.o:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsg.cxx.o
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsg.cxx.o
-.PHONY : src/RSWECustomMsg.cxx.o
+# fast build rule for target.
+RSWE_lib/fast:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/build
+.PHONY : RSWE_lib/fast
 
-src/RSWECustomMsg.i: src/RSWECustomMsg.cxx.i
+#=============================================================================
+# Target rules for targets named publisherApp
 
-.PHONY : src/RSWECustomMsg.i
+# Build rule for target.
+publisherApp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 publisherApp
+.PHONY : publisherApp
 
-# target to preprocess a source file
-src/RSWECustomMsg.cxx.i:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsg.cxx.i
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsg.cxx.i
-.PHONY : src/RSWECustomMsg.cxx.i
+# fast build rule for target.
+publisherApp/fast:
+	$(MAKE) -f CMakeFiles/publisherApp.dir/build.make CMakeFiles/publisherApp.dir/build
+.PHONY : publisherApp/fast
 
-src/RSWECustomMsg.s: src/RSWECustomMsg.cxx.s
+src/PublisherApp.o: src/PublisherApp.cpp.o
 
-.PHONY : src/RSWECustomMsg.s
-
-# target to generate assembly for a file
-src/RSWECustomMsg.cxx.s:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsg.cxx.s
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsg.cxx.s
-.PHONY : src/RSWECustomMsg.cxx.s
-
-src/RSWECustomMsgPubSubTypes.o: src/RSWECustomMsgPubSubTypes.cxx.o
-
-.PHONY : src/RSWECustomMsgPubSubTypes.o
+.PHONY : src/PublisherApp.o
 
 # target to build an object file
-src/RSWECustomMsgPubSubTypes.cxx.o:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsgPubSubTypes.cxx.o
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsgPubSubTypes.cxx.o
-.PHONY : src/RSWECustomMsgPubSubTypes.cxx.o
+src/PublisherApp.cpp.o:
+	$(MAKE) -f CMakeFiles/publisherApp.dir/build.make CMakeFiles/publisherApp.dir/src/PublisherApp.cpp.o
+.PHONY : src/PublisherApp.cpp.o
 
-src/RSWECustomMsgPubSubTypes.i: src/RSWECustomMsgPubSubTypes.cxx.i
+src/PublisherApp.i: src/PublisherApp.cpp.i
 
-.PHONY : src/RSWECustomMsgPubSubTypes.i
+.PHONY : src/PublisherApp.i
 
 # target to preprocess a source file
-src/RSWECustomMsgPubSubTypes.cxx.i:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsgPubSubTypes.cxx.i
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsgPubSubTypes.cxx.i
-.PHONY : src/RSWECustomMsgPubSubTypes.cxx.i
+src/PublisherApp.cpp.i:
+	$(MAKE) -f CMakeFiles/publisherApp.dir/build.make CMakeFiles/publisherApp.dir/src/PublisherApp.cpp.i
+.PHONY : src/PublisherApp.cpp.i
 
-src/RSWECustomMsgPubSubTypes.s: src/RSWECustomMsgPubSubTypes.cxx.s
+src/PublisherApp.s: src/PublisherApp.cpp.s
 
-.PHONY : src/RSWECustomMsgPubSubTypes.s
+.PHONY : src/PublisherApp.s
 
 # target to generate assembly for a file
-src/RSWECustomMsgPubSubTypes.cxx.s:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsgPubSubTypes.cxx.s
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsgPubSubTypes.cxx.s
-.PHONY : src/RSWECustomMsgPubSubTypes.cxx.s
+src/PublisherApp.cpp.s:
+	$(MAKE) -f CMakeFiles/publisherApp.dir/build.make CMakeFiles/publisherApp.dir/src/PublisherApp.cpp.s
+.PHONY : src/PublisherApp.cpp.s
 
-src/RSWECustomMsgPublisher.o: src/RSWECustomMsgPublisher.cpp.o
+src/RSWEPublisher.o: src/RSWEPublisher.cpp.o
 
-.PHONY : src/RSWECustomMsgPublisher.o
+.PHONY : src/RSWEPublisher.o
 
 # target to build an object file
-src/RSWECustomMsgPublisher.cpp.o:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsgPublisher.cpp.o
-.PHONY : src/RSWECustomMsgPublisher.cpp.o
+src/RSWEPublisher.cpp.o:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/RSWEPublisher.cpp.o
+.PHONY : src/RSWEPublisher.cpp.o
 
-src/RSWECustomMsgPublisher.i: src/RSWECustomMsgPublisher.cpp.i
+src/RSWEPublisher.i: src/RSWEPublisher.cpp.i
 
-.PHONY : src/RSWECustomMsgPublisher.i
+.PHONY : src/RSWEPublisher.i
 
 # target to preprocess a source file
-src/RSWECustomMsgPublisher.cpp.i:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsgPublisher.cpp.i
-.PHONY : src/RSWECustomMsgPublisher.cpp.i
+src/RSWEPublisher.cpp.i:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/RSWEPublisher.cpp.i
+.PHONY : src/RSWEPublisher.cpp.i
 
-src/RSWECustomMsgPublisher.s: src/RSWECustomMsgPublisher.cpp.s
+src/RSWEPublisher.s: src/RSWEPublisher.cpp.s
 
-.PHONY : src/RSWECustomMsgPublisher.s
+.PHONY : src/RSWEPublisher.s
 
 # target to generate assembly for a file
-src/RSWECustomMsgPublisher.cpp.s:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectPublisher.dir/build.make CMakeFiles/DDSRoboticsSwProjectPublisher.dir/src/RSWECustomMsgPublisher.cpp.s
-.PHONY : src/RSWECustomMsgPublisher.cpp.s
+src/RSWEPublisher.cpp.s:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/RSWEPublisher.cpp.s
+.PHONY : src/RSWEPublisher.cpp.s
 
-src/RSWECustomMsgSubscriber.o: src/RSWECustomMsgSubscriber.cpp.o
+src/RSWESubscriber.o: src/RSWESubscriber.cpp.o
 
-.PHONY : src/RSWECustomMsgSubscriber.o
+.PHONY : src/RSWESubscriber.o
 
 # target to build an object file
-src/RSWECustomMsgSubscriber.cpp.o:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsgSubscriber.cpp.o
-.PHONY : src/RSWECustomMsgSubscriber.cpp.o
+src/RSWESubscriber.cpp.o:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/RSWESubscriber.cpp.o
+.PHONY : src/RSWESubscriber.cpp.o
 
-src/RSWECustomMsgSubscriber.i: src/RSWECustomMsgSubscriber.cpp.i
+src/RSWESubscriber.i: src/RSWESubscriber.cpp.i
 
-.PHONY : src/RSWECustomMsgSubscriber.i
+.PHONY : src/RSWESubscriber.i
 
 # target to preprocess a source file
-src/RSWECustomMsgSubscriber.cpp.i:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsgSubscriber.cpp.i
-.PHONY : src/RSWECustomMsgSubscriber.cpp.i
+src/RSWESubscriber.cpp.i:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/RSWESubscriber.cpp.i
+.PHONY : src/RSWESubscriber.cpp.i
 
-src/RSWECustomMsgSubscriber.s: src/RSWECustomMsgSubscriber.cpp.s
+src/RSWESubscriber.s: src/RSWESubscriber.cpp.s
 
-.PHONY : src/RSWECustomMsgSubscriber.s
+.PHONY : src/RSWESubscriber.s
 
 # target to generate assembly for a file
-src/RSWECustomMsgSubscriber.cpp.s:
-	$(MAKE) -f CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/build.make CMakeFiles/DDSRoboticsSwProjectSubscriber.dir/src/RSWECustomMsgSubscriber.cpp.s
-.PHONY : src/RSWECustomMsgSubscriber.cpp.s
+src/RSWESubscriber.cpp.s:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/RSWESubscriber.cpp.s
+.PHONY : src/RSWESubscriber.cpp.s
+
+src/SubscriberApp.o: src/SubscriberApp.cpp.o
+
+.PHONY : src/SubscriberApp.o
+
+# target to build an object file
+src/SubscriberApp.cpp.o:
+	$(MAKE) -f CMakeFiles/subscriberApp.dir/build.make CMakeFiles/subscriberApp.dir/src/SubscriberApp.cpp.o
+.PHONY : src/SubscriberApp.cpp.o
+
+src/SubscriberApp.i: src/SubscriberApp.cpp.i
+
+.PHONY : src/SubscriberApp.i
+
+# target to preprocess a source file
+src/SubscriberApp.cpp.i:
+	$(MAKE) -f CMakeFiles/subscriberApp.dir/build.make CMakeFiles/subscriberApp.dir/src/SubscriberApp.cpp.i
+.PHONY : src/SubscriberApp.cpp.i
+
+src/SubscriberApp.s: src/SubscriberApp.cpp.s
+
+.PHONY : src/SubscriberApp.s
+
+# target to generate assembly for a file
+src/SubscriberApp.cpp.s:
+	$(MAKE) -f CMakeFiles/subscriberApp.dir/build.make CMakeFiles/subscriberApp.dir/src/SubscriberApp.cpp.s
+.PHONY : src/SubscriberApp.cpp.s
+
+src/ThreadsApp.o: src/ThreadsApp.cpp.o
+
+.PHONY : src/ThreadsApp.o
+
+# target to build an object file
+src/ThreadsApp.cpp.o:
+	$(MAKE) -f CMakeFiles/threadsApp.dir/build.make CMakeFiles/threadsApp.dir/src/ThreadsApp.cpp.o
+.PHONY : src/ThreadsApp.cpp.o
+
+src/ThreadsApp.i: src/ThreadsApp.cpp.i
+
+.PHONY : src/ThreadsApp.i
+
+# target to preprocess a source file
+src/ThreadsApp.cpp.i:
+	$(MAKE) -f CMakeFiles/threadsApp.dir/build.make CMakeFiles/threadsApp.dir/src/ThreadsApp.cpp.i
+.PHONY : src/ThreadsApp.cpp.i
+
+src/ThreadsApp.s: src/ThreadsApp.cpp.s
+
+.PHONY : src/ThreadsApp.s
+
+# target to generate assembly for a file
+src/ThreadsApp.cpp.s:
+	$(MAKE) -f CMakeFiles/threadsApp.dir/build.make CMakeFiles/threadsApp.dir/src/ThreadsApp.cpp.s
+.PHONY : src/ThreadsApp.cpp.s
+
+src/msg/MsgTime.o: src/msg/MsgTime.cxx.o
+
+.PHONY : src/msg/MsgTime.o
+
+# target to build an object file
+src/msg/MsgTime.cxx.o:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/MsgTime.cxx.o
+.PHONY : src/msg/MsgTime.cxx.o
+
+src/msg/MsgTime.i: src/msg/MsgTime.cxx.i
+
+.PHONY : src/msg/MsgTime.i
+
+# target to preprocess a source file
+src/msg/MsgTime.cxx.i:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/MsgTime.cxx.i
+.PHONY : src/msg/MsgTime.cxx.i
+
+src/msg/MsgTime.s: src/msg/MsgTime.cxx.s
+
+.PHONY : src/msg/MsgTime.s
+
+# target to generate assembly for a file
+src/msg/MsgTime.cxx.s:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/MsgTime.cxx.s
+.PHONY : src/msg/MsgTime.cxx.s
+
+src/msg/MsgTimePubSubTypes.o: src/msg/MsgTimePubSubTypes.cxx.o
+
+.PHONY : src/msg/MsgTimePubSubTypes.o
+
+# target to build an object file
+src/msg/MsgTimePubSubTypes.cxx.o:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/MsgTimePubSubTypes.cxx.o
+.PHONY : src/msg/MsgTimePubSubTypes.cxx.o
+
+src/msg/MsgTimePubSubTypes.i: src/msg/MsgTimePubSubTypes.cxx.i
+
+.PHONY : src/msg/MsgTimePubSubTypes.i
+
+# target to preprocess a source file
+src/msg/MsgTimePubSubTypes.cxx.i:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/MsgTimePubSubTypes.cxx.i
+.PHONY : src/msg/MsgTimePubSubTypes.cxx.i
+
+src/msg/MsgTimePubSubTypes.s: src/msg/MsgTimePubSubTypes.cxx.s
+
+.PHONY : src/msg/MsgTimePubSubTypes.s
+
+# target to generate assembly for a file
+src/msg/MsgTimePubSubTypes.cxx.s:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/MsgTimePubSubTypes.cxx.s
+.PHONY : src/msg/MsgTimePubSubTypes.cxx.s
+
+src/msg/RSWECustomMsg.o: src/msg/RSWECustomMsg.cxx.o
+
+.PHONY : src/msg/RSWECustomMsg.o
+
+# target to build an object file
+src/msg/RSWECustomMsg.cxx.o:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/RSWECustomMsg.cxx.o
+.PHONY : src/msg/RSWECustomMsg.cxx.o
+
+src/msg/RSWECustomMsg.i: src/msg/RSWECustomMsg.cxx.i
+
+.PHONY : src/msg/RSWECustomMsg.i
+
+# target to preprocess a source file
+src/msg/RSWECustomMsg.cxx.i:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/RSWECustomMsg.cxx.i
+.PHONY : src/msg/RSWECustomMsg.cxx.i
+
+src/msg/RSWECustomMsg.s: src/msg/RSWECustomMsg.cxx.s
+
+.PHONY : src/msg/RSWECustomMsg.s
+
+# target to generate assembly for a file
+src/msg/RSWECustomMsg.cxx.s:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/RSWECustomMsg.cxx.s
+.PHONY : src/msg/RSWECustomMsg.cxx.s
+
+src/msg/RSWECustomMsgPubSubTypes.o: src/msg/RSWECustomMsgPubSubTypes.cxx.o
+
+.PHONY : src/msg/RSWECustomMsgPubSubTypes.o
+
+# target to build an object file
+src/msg/RSWECustomMsgPubSubTypes.cxx.o:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/RSWECustomMsgPubSubTypes.cxx.o
+.PHONY : src/msg/RSWECustomMsgPubSubTypes.cxx.o
+
+src/msg/RSWECustomMsgPubSubTypes.i: src/msg/RSWECustomMsgPubSubTypes.cxx.i
+
+.PHONY : src/msg/RSWECustomMsgPubSubTypes.i
+
+# target to preprocess a source file
+src/msg/RSWECustomMsgPubSubTypes.cxx.i:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/RSWECustomMsgPubSubTypes.cxx.i
+.PHONY : src/msg/RSWECustomMsgPubSubTypes.cxx.i
+
+src/msg/RSWECustomMsgPubSubTypes.s: src/msg/RSWECustomMsgPubSubTypes.cxx.s
+
+.PHONY : src/msg/RSWECustomMsgPubSubTypes.s
+
+# target to generate assembly for a file
+src/msg/RSWECustomMsgPubSubTypes.cxx.s:
+	$(MAKE) -f CMakeFiles/RSWE_lib.dir/build.make CMakeFiles/RSWE_lib.dir/src/msg/RSWECustomMsgPubSubTypes.cxx.s
+.PHONY : src/msg/RSWECustomMsgPubSubTypes.cxx.s
 
 # Help Target
 help:
@@ -256,22 +411,39 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... DDSRoboticsSwProjectPublisher"
-	@echo "... DDSRoboticsSwProjectSubscriber"
-	@echo "... src/RSWECustomMsg.o"
-	@echo "... src/RSWECustomMsg.i"
-	@echo "... src/RSWECustomMsg.s"
-	@echo "... src/RSWECustomMsgPubSubTypes.o"
-	@echo "... src/RSWECustomMsgPubSubTypes.i"
-	@echo "... src/RSWECustomMsgPubSubTypes.s"
-	@echo "... src/RSWECustomMsgPublisher.o"
-	@echo "... src/RSWECustomMsgPublisher.i"
-	@echo "... src/RSWECustomMsgPublisher.s"
-	@echo "... src/RSWECustomMsgSubscriber.o"
-	@echo "... src/RSWECustomMsgSubscriber.i"
-	@echo "... src/RSWECustomMsgSubscriber.s"
+	@echo "... edit_cache"
+	@echo "... subscriberApp"
+	@echo "... threadsApp"
+	@echo "... RSWE_lib"
+	@echo "... publisherApp"
+	@echo "... src/PublisherApp.o"
+	@echo "... src/PublisherApp.i"
+	@echo "... src/PublisherApp.s"
+	@echo "... src/RSWEPublisher.o"
+	@echo "... src/RSWEPublisher.i"
+	@echo "... src/RSWEPublisher.s"
+	@echo "... src/RSWESubscriber.o"
+	@echo "... src/RSWESubscriber.i"
+	@echo "... src/RSWESubscriber.s"
+	@echo "... src/SubscriberApp.o"
+	@echo "... src/SubscriberApp.i"
+	@echo "... src/SubscriberApp.s"
+	@echo "... src/ThreadsApp.o"
+	@echo "... src/ThreadsApp.i"
+	@echo "... src/ThreadsApp.s"
+	@echo "... src/msg/MsgTime.o"
+	@echo "... src/msg/MsgTime.i"
+	@echo "... src/msg/MsgTime.s"
+	@echo "... src/msg/MsgTimePubSubTypes.o"
+	@echo "... src/msg/MsgTimePubSubTypes.i"
+	@echo "... src/msg/MsgTimePubSubTypes.s"
+	@echo "... src/msg/RSWECustomMsg.o"
+	@echo "... src/msg/RSWECustomMsg.i"
+	@echo "... src/msg/RSWECustomMsg.s"
+	@echo "... src/msg/RSWECustomMsgPubSubTypes.o"
+	@echo "... src/msg/RSWECustomMsgPubSubTypes.i"
+	@echo "... src/msg/RSWECustomMsgPubSubTypes.s"
 .PHONY : help
 
 

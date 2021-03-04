@@ -4,7 +4,7 @@ if(NOT CMAKE_VERSION VERSION_LESS 3.0)
     cmake_policy(SET CMP0048 NEW)
 endif()
 
-project(DDSRoboticsSwProject)
+project(RSWELibrary)
 
 # Find requirements
 if(NOT fastcdr_FOUND)
@@ -28,10 +28,19 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLANG OR
 endif()
 
 message(STATUS "Configuring RSWE library publisher/subscriber")
-file(GLOB DDS_ROBOTICSSWPROJECT_SOURCES_CXX "src/*.cxx")
+file(GLOB DDS_ROBOTICSSWPROJECT_SOURCES_CXX "src/msg/*.cxx")
 
-add_executable(DDSRoboticsSwProjectPublisher src/RSWECustomMsgPublisher.cpp ${DDS_ROBOTICSSWPROJECT_SOURCES_CXX})
-target_link_libraries(DDSRoboticsSwProjectPublisher fastrtps fastcdr)
+add_library(RSWE_lib
+  src/RSWESubscriber.cpp
+  src/RSWEPublisher.cpp
+  ${DDS_ROBOTICSSWPROJECT_SOURCES_CXX})
 
-add_executable(DDSRoboticsSwProjectSubscriber src/RSWECustomMsgSubscriber.cpp ${DDS_ROBOTICSSWPROJECT_SOURCES_CXX})
-target_link_libraries(DDSRoboticsSwProjectSubscriber fastrtps fastcdr)
+  target_link_libraries(RSWE_lib fastrtps fastcdr)
+
+add_executable(publisherApp src/PublisherApp.cpp)
+add_executable(subscriberApp src/SubscriberApp.cpp)
+add_executable(threadsApp src/ThreadsApp.cpp)
+
+target_link_libraries(publisherApp PUBLIC RSWE_lib)
+target_link_libraries(subscriberApp PUBLIC RSWE_lib)
+target_link_libraries(threadsApp pthread)
