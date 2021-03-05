@@ -92,7 +92,7 @@ Now it is possible to follow the last steps to run both the Publisher and Subscr
     ```
     two different processes (publisher and subscriber threads) are runned together. The publisher streams a series of messages and the subscriber keeps listening.
 
-    There could be the necessity to link the dynamic library *libfastcdr.so.1* when you launch *ThreadSingleMsgApp* or *ThreadSingleMsgApp*. You can do this by running the following commands:
+- There could be the necessity to link the dynamic library *libfastcdr.so.1* when you launch *ThreadSingleMsgApp* or *ThreadSingleMsgApp*. You can do this by running the following commands:
     ```
     $ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/Fast-DDS/install/lib/
     $ export LD_LIBRARY_PATH
