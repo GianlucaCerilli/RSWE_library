@@ -72,14 +72,15 @@ Now it is possible to follow the last steps to run both the Publisher and Subscr
     $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/ ..
     $ cmake .. && make clean && make
     ```
+    You could have installed the *fastcdr*, *fastrtps* e *foonathan_memory* libraries at a different path, so select the right one.
 - It is possible to run the publisher and subscriber by running the following commands in two different terminals:
     ```
     $ ./publisherApp
     $ ./subscriberApp
     ```
 - Otherwise, it is possible to run the publisher and subscriber in one single terminal, using threads.
-</br>
-By running:
+    </br>
+    By running:
     ```
     $ ./threadSingleMsgApp
     ```
@@ -96,7 +97,7 @@ By running:
     $ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/Fast-DDS/install/lib/
     $ export LD_LIBRARY_PATH
     ```
-    and then run the executable again.
+    and then run the executable again. As before, you could have the *libfastcdr.so.1* at a different path from this one, so select the right one.
 ## RSWE library tasks
 The main tasks required for the design of the **RSWE library** are:
 - [x] Create custom messages
