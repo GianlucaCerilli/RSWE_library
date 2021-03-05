@@ -86,7 +86,7 @@ Now it is possible to follow the last steps to run both the Publisher and Subscr
     ```
     we run an application in which a subscriber activates the publisher thread when it needs to receive a single message from it.
     </br>
-    Instead, with this command:
+- Instead, with this command:
     ```
     $ ./threadsStreamMsgsApp
     ```
