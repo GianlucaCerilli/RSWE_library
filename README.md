@@ -97,7 +97,7 @@ Now it is possible to follow the last steps to run both the Publisher and Subscr
     $ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/Fast-DDS/install/lib/
     $ export LD_LIBRARY_PATH
     ```
-    and then run the executable again. As before, you could have the *libfastcdr.so.1* at a different path from this one, so select the right one.
+    and then run the executable again. As before, you could have installed the *libfastcdr.so.1* library at a different path from this one, so select the right one.
 ## RSWE library tasks
 The main tasks required for the design of the **RSWE library** are:
 - [x] Create custom messages
