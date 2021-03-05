@@ -13,10 +13,10 @@ int main()
 
     int samples{2};
 
-    std::unique_ptr<RSWESubscriber> mysub(new RSWESubscriber());
+    std::unique_ptr<RSWESubscriber> sub(new RSWESubscriber());
 
-    if (mysub->init())
+    if (sub->init())
     {
-        mysub->run(static_cast<uint32_t>(samples));
+        sub->run(static_cast<uint32_t>(samples));
     }
 }

@@ -27,7 +27,7 @@ A simple publisher/subscriber application can be written by following the guide 
 
 > **Warning 2**
 > </br>
-> It was not possible to run the command of *1.3.6.* section:
+> It was not possible to run the command at *1.3.6.* section:
 > ```
 > <path/to/Fast DDS-Gen>/scripts/fastrtpsgen HelloWorld.idl
 > ```
@@ -47,10 +47,11 @@ There could be the possibility that *fastddsgen* add more files than the ones ne
 > $ cmake ...
 > ```
 > there are errors due to the missing *fastcdr*, *fastrtps* e *foonathan_memory*
-> libraries. It is possible to run this command instead:
+> libraries. It is possible to run this command:
 > ```
 > $ cmake -DCMAKE_INSTALL_PREFIX:PATH=~/Fast-DDS/install/ ..
 > ```
+>to retrieve the missing libraries.
 
 The libraries paths can be found from *$HOME* with:
 ```
@@ -76,7 +77,9 @@ Now it is possible to follow the last steps to run both the Publisher and Subscr
     $ ./publisherApp
     $ ./subscriberApp
     ```
-- Otherwise, it is possible to run the publisher and subscriber in one single terminal, using threads. By running:
+- Otherwise, it is possible to run the publisher and subscriber in one single terminal, using threads.
+</br>
+By running:
     ```
     $ ./threadSingleMsgApp
     ```
@@ -107,10 +110,12 @@ The main tasks required for the design of the **RSWE library** are:
 
 ## Activities rundown
 Here a rundown of the main activities that have been carried on approximately in the time indicated:
-| Activity                                 | ~ Time spent (hr) |
-| ---------------------------------------- | ----------------- |
-| Libraries installation & problems fixing | 2.5               |
-| Study of Fast-DDS documentation          | 1                 |
-| Making the example application work      | 0.75              |
-| Creation of the RSWE library             | 4                 |
-| Writing of documentation                 | 1                 |
+| Activity                                       | ~ Time spent (hr) |
+| ---------------------------------------------- | ----------------- |
+| Libraries installation & problems fixing       | 2.5               |
+| Study of basic Fast-DDS documentation          | 1.5               |
+| Making the example application work            | 1                 |
+| Writing of documentation                       | 1.5               |
+| Creation of project structure and RSWE library | 5                 |
+| Creation of pub/sub applications               | 1                 |
+| Creation of threads applications               | 2.5               |

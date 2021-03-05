@@ -58,7 +58,8 @@ namespace RSWE
             if (info.valid_data)
             {
                 samples_++;
-                std::cout << "Message RECEIVED: " << time_.message() << " - " << time_.hour() << ":" << time_.minute() << ":" << time_.second() << std::endl;
+                std::cout << "Message " << time_.index() << " RECEIVED: " << time_.message() << " - "
+                          << time_.hour() << ":" << time_.minute() << ":" << time_.second() << std::endl;
             }
         }
     }

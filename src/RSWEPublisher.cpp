@@ -142,7 +142,8 @@ namespace RSWE
             {
                 samples_sent++;
                 updateTimeMsg();
-                std::cout << "Message SENT: " << time_.message() << " - " << time_.hour() << ":" << time_.minute() << ":" << time_.second() << std::endl;
+                std::cout << "Message " << time_.index() << " SENT : " << time_.message() << " - "
+                          << time_.hour() << " : " << time_.minute() << " : " << time_.second() << std::endl;
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }

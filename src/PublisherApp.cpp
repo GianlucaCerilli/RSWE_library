@@ -13,10 +13,10 @@ int main()
 
     int samples{2};
 
-    std::unique_ptr<RSWEPublisher> mypub(new RSWEPublisher());
+    std::unique_ptr<RSWEPublisher> pub(new RSWEPublisher());
 
-    if (mypub->init())
+    if (pub->init())
     {
-        mypub->run(static_cast<uint32_t>(samples));
+        pub->run(static_cast<uint32_t>(samples));
     }
 }
